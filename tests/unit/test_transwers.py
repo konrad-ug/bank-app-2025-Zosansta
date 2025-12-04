@@ -1,5 +1,6 @@
 from src.personal_account import PersonalAccount
 from src.company_account import CompanyAccount
+from src.account import Account
 
 class TestTransfers:
     def test_incoming_transwer(self):
@@ -39,6 +40,36 @@ class TestTransfers:
         company_account = CompanyAccount("Nazwa", "12345654321")
         company_account.outgoing_transwer(-20.0)
         assert company_account.balance == 0.0
+
+    def test_personal_account_express_transfer(self):
+        personal_account = PersonalAccount("Alice", "Kowalski", "61010112345")
+        personal_account.balance = 10.0
+        personal_account.outgoing_express_transwer(10.0)
+        assert personal_account.balance == -1.0
+
+    def test_company_account_express_transfer(self):
+        account = CompanyAccount("Firma", "12345654321")
+        account.balance = 10.0
+        account.outgoing_express_transwer(10.0)
+        assert account.balance == -5.0
+
+    def test_personal_account_express_transfer_not_enough_funds(self):
+        personal_account = PersonalAccount("Alice", "Kowalski", "61010112345")
+        personal_account.balance = 0.0
+        personal_account.outgoing_express_transwer(1.0)
+        assert personal_account.balance == -2.0
+
+    def test_company_account_express_transfer_not_enough_funds(self):
+        account = CompanyAccount("Firma", "12345654321")
+        account.balance = 0.0
+        account.outgoing_express_transwer(1.0)
+        assert account.balance == -6.0
+
+    def test_express_transfer_negative_amount(self):
+        personal_account = PersonalAccount("Alice", "Kowalski", "61010112345")
+        personal_account.balance = 10.0
+        personal_account.outgoing_express_transwer(-5.0)
+        assert personal_account.balance == 10.0
 
         
 
