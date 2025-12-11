@@ -8,6 +8,10 @@ class TestAccount:
         assert account.last_name == "Doe"
         assert account.balance == 0.0
         assert account.pesel == "12457897334"
+    
+    def test_default_balance(self):
+        account = PersonalAccount("John", "Doe", "12457897334")
+        assert account.balance == 0.0
 
     def test_pesel_too_long(self):
         account = PersonalAccount("John", "Doe", "124657897334")
@@ -45,3 +49,5 @@ class TestAccount:
     def test_promo_year_after_1960(self):
         account = PersonalAccount("Jane", "Doe", "61010112345", "PROM_123")
         assert account.balance == 50.0
+
+    

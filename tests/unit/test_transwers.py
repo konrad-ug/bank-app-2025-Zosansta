@@ -3,6 +3,8 @@ from src.company_account import CompanyAccount
 from src.account import Account
 
 class TestTransfers:
+    
+
     def test_incoming_transwer(self):
         personal_account = PersonalAccount("Bob", "Smith", "12345654321")
         personal_account.incoming_transwer(100.0)
@@ -70,6 +72,13 @@ class TestTransfers:
         personal_account.balance = 10.0
         personal_account.outgoing_express_transwer(-5.0)
         assert personal_account.balance == 10.0
+
+    def test_express_transfer_fee(self):
+        personal_account = PersonalAccount(first_name="Jan", last_name="Kowalski", pesel="12345678901")
+        personal_account.balance = 100.0
+        personal_account.outgoing_express_transwer(50)
+        assert personal_account.balance == 49  # 100 - 50 - 1 = 49
+
 
         
 
