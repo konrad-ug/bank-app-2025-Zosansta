@@ -1,6 +1,8 @@
 from src.account import Account
 
 class CompanyAccount(Account):
+    express_outgoing_transfer_fee = 5.0
+
     def __init__(self, name, nip):
         self.name = name
         self.nip = nip if self.is_nip_valid(nip) else "Invalid"

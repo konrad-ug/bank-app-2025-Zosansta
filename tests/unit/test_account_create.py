@@ -50,4 +50,16 @@ class TestAccount:
         account = PersonalAccount("Jane", "Doe", "61010112345", "PROM_123")
         assert account.balance == 50.0
 
+    def test_is_after_1960_invalid_pesel(self):
+        account = PersonalAccount(first_name="Jan", last_name="Kowalski", pesel="Invalid")
+        assert account.is_after_1960() is False
+
+    def test_is_after_1960_2000(self):
+        account = PersonalAccount(first_name="Jan", last_name="Kowalski", pesel="01220100000")  
+        assert account.is_after_1960() is True
+
+    def test_is_after_1960_invalid_month(self):
+        account = PersonalAccount(first_name="Jan", last_name="Kowalski", pesel="99350100000")  # month = 35
+        assert account.is_after_1960() is False
+
     
