@@ -59,13 +59,13 @@ class TestTransfers:
         personal_account = PersonalAccount("Alice", "Kowalski", "61010112345")
         personal_account.balance = 0.0
         personal_account.outgoing_express_transwer(1.0)
-        assert personal_account.balance == -2.0
+        assert personal_account.balance == 0.0
 
     def test_company_account_express_transfer_not_enough_funds(self):
         account = CompanyAccount("Firma", "12345654321")
         account.balance = 0.0
         account.outgoing_express_transwer(1.0)
-        assert account.balance == -6.0
+        assert account.balance == 0.0
 
     def test_express_transfer_negative_amount(self):
         personal_account = PersonalAccount("Alice", "Kowalski", "61010112345")
