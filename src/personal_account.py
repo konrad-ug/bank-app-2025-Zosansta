@@ -12,6 +12,7 @@ class PersonalAccount(Account):
         else:
             self.balance = 0.0
         self.account_type = "personal"
+        self.historia = []
     
 
     # def outgoing_express_transwer(self):
