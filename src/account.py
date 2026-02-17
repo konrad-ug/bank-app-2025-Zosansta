@@ -11,9 +11,12 @@ class Account:
 
     def outgoing_express_transwer(self, value):
         if value <= 0:
-            return "Błąd, kwota nie może być mniejsza niż 0 zł"
-        total = value + self.express_outgoing_transfer_fee
-        if total-self.express_outgoing_transfer_fee <= self.balance:
-            self.balance -= total
+            return "Błąd, kwota nie może być ujemna"
+        
+        if value <= self.balance:
+            self.balance -= value
+            
+            self.balance -= self.express_outgoing_transfer_fee
             return True
-        return False
+            
+        return "Błąd, zbyt mało środków na koncie"
