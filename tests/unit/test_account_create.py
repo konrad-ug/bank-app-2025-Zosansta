@@ -59,7 +59,7 @@ class TestAccount:
         assert account.is_after_1960() is True
 
     def test_is_after_1960_invalid_month(self):
-        account = PersonalAccount(first_name="Jan", last_name="Kowalski", pesel="99350100000")  # month = 35
+        account = PersonalAccount(first_name="Jan", last_name="Kowalski", pesel="99350100000")
         assert account.is_after_1960() is False
 
     

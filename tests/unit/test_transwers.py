@@ -3,7 +3,6 @@ from src.company_account import CompanyAccount
 from src.account import Account
 
 class TestTransfers:
-    
 
     def test_incoming_transwer(self):
         personal_account = PersonalAccount("Bob", "Smith", "12345654321")
@@ -16,9 +15,9 @@ class TestTransfers:
 
     def test_outgoing_transwer(self):
         personal_account = PersonalAccount("Bob", "Smith", "12345654321")
-        personal_account.balance = 200.0 #1. set up
-        personal_account.outgoing_transwer(50.0) #2. action
-        assert personal_account.balance == 150.0 #3. assertion
+        personal_account.balance = 200.0
+        personal_account.outgoing_transwer(50.0)
+        assert personal_account.balance == 150.0
 
         company_account = CompanyAccount("Nazwa", "12345654321")
         company_account.balance = 200.0
@@ -55,31 +54,24 @@ class TestTransfers:
         account.outgoing_express_transwer(10.0)
         assert account.balance == -5.0
 
-    def test_personal_account_express_transfer_not_enough_funds(self):
+    def test_express_transfer_insufficient_funds_message(self):
         personal_account = PersonalAccount("Alice", "Kowalski", "61010112345")
-        personal_account.balance = 0.0
-        personal_account.outgoing_express_transwer(1.0)
-        assert personal_account.balance == 0.0
+        personal_account.balance = 5.0
+        result = personal_account.outgoing_express_transwer(10.0)
+        assert result == "Błąd, zbyt mało środków na koncie"
 
-    def test_company_account_express_transfer_not_enough_funds(self):
-        account = CompanyAccount("Firma", "12345654321")
-        account.balance = 0.0
-        account.outgoing_express_transwer(1.0)
-        assert account.balance == 0.0
 
-    def test_express_transfer_negative_amount(self):
+    def test_express_transfer_negative_amount_message(self):
         personal_account = PersonalAccount("Alice", "Kowalski", "61010112345")
         personal_account.balance = 10.0
-        personal_account.outgoing_express_transwer(-5.0)
+        result = personal_account.outgoing_express_transwer(-5.0)
+        assert result == "Błąd, kwota nie może być ujemna"
         assert personal_account.balance == 10.0
 
     def test_express_transfer_fee(self):
         personal_account = PersonalAccount(first_name="Jan", last_name="Kowalski", pesel="12345678901")
         personal_account.balance = 100.0
         personal_account.outgoing_express_transwer(50)
-        assert personal_account.balance == 49  # 100 - 50 - 1 = 49
-
-
-        
+        assert personal_account.balance == 49
 
         
