@@ -74,4 +74,25 @@ class TestTransfers:
         personal_account.outgoing_express_transwer(50)
         assert personal_account.balance == 49
 
+    def test_history(self):
+        account = PersonalAccount("Jan", "Kowalski", "70010112345")
+        account.incoming_transwer(500.0)
+        account.outgoing_express_transwer(300.0)
+        
+        # self.assertEqual(account.historia, [500.0, -300.0, -1.0])
+        assert account.historia == [500.0, -300.0, -1.0]
+
+    def test_histor_transwer(self):
+        account = PersonalAccount("Jan", "Kowalski", "70010112345")
+        account.balance = 100.0
+        account.outgoing_transwer(50.0)
+        assert account.historia == [-50.0]
+
+    def test_history_company_transwer(self):
+        account = CompanyAccount("Firma", "1234567890")
+        account.balance = 100.0
+        account.outgoing_express_transwer(50.0)
+        assert account.historia == [-50.0, -5.0]
+
+
         
