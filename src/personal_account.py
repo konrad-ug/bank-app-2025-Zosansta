@@ -13,10 +13,6 @@ class PersonalAccount(Account):
             self.balance = 0.0
         self.account_type = "personal"
         self.historia = []
-    
-
-    # def outgoing_express_transwer(self):
-        
 
     def is_pesel_valid(self, pesel):
         if isinstance(pesel, str) and len(pesel) == 11:
@@ -44,4 +40,17 @@ class PersonalAccount(Account):
 
         return year > 1960
     
+    def submit_for_loan(self, amount):
+        if self._check_last_three_are_deposits() or self._check_sum_of_last_five_is_enough(amount):
+            self.balance += amount
+            return True
+        return False
+
+    def _check_last_three_are_deposits(self):
+        return len(self.historia) >= 3 and all(x > 0 for x in self.historia[-3:])
+
+    def _check_sum_of_last_five_is_enough(self, amount):
+        if len(self.historia) >= 5:
+            return sum(self.historia[-5:]) > amount
+        return False
     
