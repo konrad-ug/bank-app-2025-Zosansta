@@ -165,3 +165,4 @@ class TestTransfers:
             elif action_type == "exp": account_obj.outgoing_express_transwer(val)
         
         assert account_obj.historia == expected_history  
+
