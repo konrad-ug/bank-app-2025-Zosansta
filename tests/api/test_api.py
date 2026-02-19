@@ -143,3 +143,40 @@ class TestApi(unittest.TestCase):
         )
 
         self.assertEqual(response.status_code, 422)
+
+    def test_outgoing_transfer_success(self):
+        self.client.post(
+            f"/api/accounts/{self.pesel}/transfer",
+            json={"amount": 1000, "type": "incoming"}
+        )
+
+        response = self.client.post(
+            f"/api/accounts/{self.pesel}/transfer",
+            json={"amount": 500, "type": "outgoing"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_express_transfer_fail(self):
+        response = self.client.post(
+            f"/api/accounts/{self.pesel}/transfer",
+            json={"amount": 1000, "type": "express"}
+        )
+
+        self.assertEqual(response.status_code, 422)
+
+    def test_express_transfer_success(self):
+        self.client.post(
+            f"/api/accounts/{self.pesel}/transfer",
+            json={"amount": 1000, "type": "incoming"}
+        )
+
+        response = self.client.post(
+            f"/api/accounts/{self.pesel}/transfer",
+            json={"amount": 100, "type": "express"}
+        )
+
+        self.assertEqual(response.status_code, 200)
+
+
+
