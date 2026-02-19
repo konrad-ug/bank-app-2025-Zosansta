@@ -25,7 +25,7 @@ class TestTransfersApi:
         assert response.status_code == 409
 
     # 2. Test przelewu przychodzącego (Feature 17)
-    def test_incoming_transwer(self):
+    def test_incoming_transfer(self):
         body = {"amount": 500, "type": "incoming"}
         response = requests.post(f"{self.url}/{self.pesel}/transfer", json=body)
         assert response.status_code == 200

@@ -12,9 +12,9 @@ def company_account():
 
 def test_loan_approved_last_three_deposits(account_with_history):
     account = account_with_history
-    account.incoming_transwer(100)
-    account.incoming_transwer(200)
-    account.incoming_transwer(300)
+    account.incoming_transfer(100)
+    account.incoming_transfer(200)
+    account.incoming_transfer(300)
     
     decision = account.submit_for_loan(500)
     

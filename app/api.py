@@ -33,14 +33,14 @@ def handle_transfer(pesel):
     # 2. Obsługa typów przelewów [cite: 16]
     try:
         if transfer_type == "incoming":
-            account.incoming_transwer(amount)
+            account.incoming_transfer(amount)
         elif transfer_type == "outgoing":
             if account.balance < amount: # Logika nieudanego przelewu [cite: 19]
                 return jsonify({"message": "Transfer failed"}), 422
-            account.outgoing_transwer(amount)
+            account.outgoing_transfer(amount)
         elif transfer_type == "express":
             # Zakładając, że masz taką metodę w src (np. z opłatą)
-            account.express_transwer(amount)
+            account.express_transfer(amount)
         else:
             # Nieznany typ [cite: 16]
             return jsonify({"message": "Unknown transfer type"}), 400
