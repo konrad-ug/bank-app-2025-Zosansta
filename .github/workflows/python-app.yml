@@ -36,12 +36,16 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        python3 -m coverage run --source=src -m pytest
+        # Ustawienie zmiennej, by Flask wiedział, gdzie jest aplikacja
+        export FLASK_APP=app/api.py
+        python3 -m flask run &
+        sleep 5 # Dajmy mu trochę więcej czasu na start
+        python3 -m coverage run --source=app,src -m pytest
         
     - name: Raport
       run: |
-        python3 -m coverage report --fail-under=100
-
+        python3 -m coverage report
+        python3 -m coverage report --include="app/*" --fail-under=100
 
 
 

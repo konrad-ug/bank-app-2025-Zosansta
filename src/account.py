@@ -1,15 +1,15 @@
 # class Account:
 #     express_outgoing_transfer_fee = 0
 
-#     def incoming_transwer(self, value):
+#     def incoming_transfer(self, value):
 #         if value > 0:
 #             self.balance += value
 
-#     def outgoing_transwer(self, value):
+#     def outgoing_transfer(self, value):
 #         if 0 < value <= self.balance:
 #             self.balance -= value
 
-#     def outgoing_express_transwer(self, value):
+#     def outgoing_express_transfer(self, value):
 #         if value <= 0:
 #             return "Błąd, kwota nie może być ujemna"
         
@@ -24,17 +24,17 @@
 class Account:
     express_outgoing_transfer_fee = 0
 
-    def incoming_transwer(self, value):
+    def incoming_transfer(self, value):
         if value > 0:
             self.balance += value
             self.historia.append(value)
 
-    def outgoing_transwer(self, value):
+    def outgoing_transfer(self, value):
         if 0 < value <= self.balance:
             self.balance -= value
             self.historia.append(-value) # [cite: 47]
 
-    def outgoing_express_transwer(self, value):
+    def outgoing_express_transfer(self, value):
         if value <= 0:
             return "Błąd, kwota nie może być ujemna"
         

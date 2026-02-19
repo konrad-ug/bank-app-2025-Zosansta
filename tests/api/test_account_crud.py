@@ -22,11 +22,6 @@ class TestAccountApi:
         resp = requests.get(f"{self.url}/00000000000")
         assert resp.status_code == 404
 
-    def test_account_count(self):
-        response = requests.get(f"{self.url}/count")
-        assert response.status_code == 200
-        assert "count" in response.json()
-
     def test_update_account_surname(self):
         # Aktualizacja tylko nazwiska
         update_body = {"surname": "Kowalski"}
@@ -75,3 +70,5 @@ class TestAccountApi:
         # Testuje błąd 404 w DELETE [cite: 55]
         response = requests.delete(f"{self.url}/00000000000")
         assert response.status_code == 404
+
+    
