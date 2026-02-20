@@ -128,7 +128,6 @@ class TestTransfers:
         empty_personal.outgoing_transfer(amount)
         assert empty_personal.balance == expected_balance
 
-    # 2. Testy błędów przelewów ekspresowych (sprawdzamy zwracany komunikat)
     @pytest.mark.parametrize("amount, initial_balance, expected_message", [
         (-10.0, 100.0, "Błąd, kwota nie może być ujemna"),
         (1000.0, 100.0, "Błąd, zbyt mało środków na koncie")
@@ -136,7 +135,7 @@ class TestTransfers:
     def test_express_transfer_errors(self, empty_personal, amount, initial_balance, expected_message):
         empty_personal.balance = initial_balance
         result = empty_personal.outgoing_express_transfer(amount)
-        assert result == expected_message # Tu porównujemy napisy [cite: 19]
+        assert result == expected_message
 
     @pytest.mark.parametrize("account_obj, fee", [
         (PersonalAccount("Alice", "Kowalski", "61010112345"), 1.0),
@@ -154,7 +153,7 @@ class TestTransfers:
          [("inc", 500.0), ("exp", 300.0)], [500.0, -300.0, -1.0]),
         (PersonalAccount("Jan", "Kowalski", "70010112345"), 
          [("out", 50.0)], [-50.0]),
-        (CompanyAccount("Firma", "1234567890"), 
+        (CompanyAccount("Firma", "1267890"), 
          [("exp", 50.0)], [-50.0, -5.0])
     ])
     def test_history_combined(self, account_obj, actions, expected_history):
