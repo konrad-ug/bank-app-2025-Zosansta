@@ -75,6 +75,7 @@ def update_account(pesel):
     if account:
         if "name" in data: account.first_name = data["name"]
         if "surname" in data: account.last_name = data["surname"]
+        if "balance" in data: account.balance = data["balance"] 
         return jsonify({"message": "Konto zaktualizowane"}), 200
     return jsonify({"message": "Nie znaleziono konta"}), 404
 
@@ -85,3 +86,18 @@ def delete_account(pesel):
         registry.get_all().remove(account)
         return jsonify({"message": "Konto usunięte"}), 200
     return jsonify({"message": "Nie znaleziono konta"}), 404
+
+@app.route("/api/accounts/transfer", methods=['POST'])
+def transfer_between_accounts():
+    data = request.get_json()
+    acc_out = registry.find_by_pesel(data["acc_out"])
+    acc_in = registry.find_by_pesel(data["acc_in"])
+    amount = data["amount"]
+
+    if acc_out and acc_in:
+        if acc_out.balance >= amount:
+            acc_out.outgoing_transfer(amount)
+            acc_in.incoming_transfer(amount)
+            return jsonify({"message": "Przelew wykonany"}), 200
+        return jsonify({"message": "Brak środków"}), 422
+    return jsonify({"message": "Nie znaleziono kont"}), 404
