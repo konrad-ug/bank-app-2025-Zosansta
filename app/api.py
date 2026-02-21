@@ -36,7 +36,6 @@ def handle_transfer(pesel):
                 return jsonify({"message": "Błąd przelewu"}), 422
             account.outgoing_express_transfer(amount)
         elif transfer_type == "express":
-            # Sprawdzenie salda dla ekspresowego (zakładając opłatę np. 1 zł)
             if account.balance < amount:
                 return jsonify({"message": "Błąd przelewu"}), 422
             account.outgoing_express_transfer(amount)

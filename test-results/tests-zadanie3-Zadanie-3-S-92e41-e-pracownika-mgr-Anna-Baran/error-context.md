@@ -1,0 +1,454 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic:
+    - alert [ref=e2]: Welcome to All in One Accessibility screen reader. To start the All in One Accessibility screen reader, press "Ctrl + /". This shortcut activates the screen reader to help you navigate and interact with the content.
+    - generic:
+      - button "Skip to Content":
+        - generic: Skip to Content
+        - generic:
+          - generic: ↵
+          - generic: ENTER
+      - button "Skip to Navigation":
+        - generic: Skip to Navigation
+        - generic:
+          - generic: ↵
+          - generic: ENTER
+      - button "Open Accessibility Toolbar":
+        - generic: Open Accessibility Toolbar
+        - generic:
+          - generic: ↵
+          - generic: ENTER
+      - button "Skip to Footer":
+        - generic: Skip to Footer
+        - generic:
+          - generic: ↵
+          - generic: ENTER
+    - button "Show Accessibility Preferences" [pressed] [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - text:                      
+  - banner [ref=e5]:
+    - alertdialog "Uprzejmie informujemy, że używamy plików cookie (tzw. ciasteczek) i podobnych technologii w celach autoryzacji, zbierania statystyk i ułatwienia korzystania z serwisu Uniwersytetu Gdańskiego. Korzystając z naszych stron wyrażasz zgodę na ich użycie, zgodnie z aktualnymi ustawieniami Twojej przeglądarki." [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e9]:
+          - text: Uprzejmie informujemy, że
+          - link "używamy plików cookie (tzw. ciasteczek)" [ref=e10] [cursor=pointer]:
+            - /url: https://ug.edu.pl/strona/120590/polityka-dotyczaca-plikow-cookies-na-uniwersytecie-gdanskim
+          - text: i podobnych technologii w celach autoryzacji, zbierania statystyk i ułatwienia korzystania z serwisu Uniwersytetu Gdańskiego. Korzystając z naszych stron wyrażasz zgodę na ich użycie, zgodnie z aktualnymi ustawieniami Twojej przeglądarki.
+        - generic [ref=e11]:
+          - button "Nie, dziękuję" [ref=e12] [cursor=pointer]
+          - button "Akceptuj" [ref=e13] [cursor=pointer]
+  - link "Przejdź do treści" [ref=e14] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e17]:
+    - banner "Nagłówek" [ref=e18]:
+      - generic [ref=e21]:
+        - link "Strona główna" [ref=e25] [cursor=pointer]:
+          - /url: https://ug.edu.pl/
+          - img "Strona główna" [ref=e26]
+        - link "Wydział Matematyki, Fizyki i Informatyki" [ref=e30] [cursor=pointer]:
+          - /url: /
+          - text: Wydział Matematyki,
+          - text: Fizyki i Informatyki
+        - generic [ref=e34]:
+          - link "Radio MORS" [ref=e36] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - img "Radio MORS" [ref=e37]
+          - link "Poczta UG" [ref=e39] [cursor=pointer]:
+            - /url: https://outlook.com/ug.edu.pl
+            - img "Poczta UG" [ref=e40]
+          - link "Dla niepełnosprawnych" [ref=e42] [cursor=pointer]:
+            - /url: http://bariery.ug.edu.pl
+            - img "Dla niepełnosprawnych" [ref=e43]
+          - link "English Version" [ref=e45] [cursor=pointer]:
+            - /url: https://en.mfi.ug.edu.pl
+            - img "English Version" [ref=e46]
+      - navigation [ref=e47]:
+        - generic [ref=e50]:
+          - generic:
+            - list:
+              - listitem [ref=e51]:
+                - link "Studenci" [ref=e52] [cursor=pointer]:
+                  - /url: /studenci
+                - list:
+                  - listitem [ref=e53]:
+                    - list [ref=e54]:
+                      - listitem [ref=e55]:
+                        - link "Kształcenie nauczycieli przedmiotu" [ref=e56] [cursor=pointer]:
+                          - /url: /studenci/ksztalcenie-nauczycieli-przedmiotu
+                      - listitem [ref=e57]:
+                        - link "Wymiana studencka/Students exchange" [ref=e58] [cursor=pointer]:
+                          - /url: /studenci/exchange
+                      - listitem [ref=e59]:
+                        - link "Stypendia" [ref=e60] [cursor=pointer]:
+                          - /url: /studenci/stypendia
+                      - listitem [ref=e61]:
+                        - link "Plany zajęć" [ref=e62] [cursor=pointer]:
+                          - /url: /studenci/plany-zajec
+                      - listitem [ref=e63]:
+                        - link "Niezbędnik studenta 1 roku" [ref=e64] [cursor=pointer]:
+                          - /url: /studenci/niezbednik-studenta-1-roku
+                      - listitem [ref=e65]:
+                        - link "Legitymacja studencka" [ref=e66] [cursor=pointer]:
+                          - /url: /studenci/legitymacja-studencka
+                      - listitem [ref=e67]:
+                        - link "Informacje Dziekanatu" [ref=e68] [cursor=pointer]:
+                          - /url: /studenci/informacje-dziekanatu
+                      - listitem [ref=e69]:
+                        - link "Praktyki" [ref=e70] [cursor=pointer]:
+                          - /url: /studenci/praktyki
+                      - listitem [ref=e71]:
+                        - link "Biuro Karier" [ref=e72] [cursor=pointer]:
+                          - /url: /studenci/biuro-karier
+                      - listitem [ref=e73]:
+                        - link "Egzaminy dyplomowe" [ref=e74] [cursor=pointer]:
+                          - /url: /studenci/egzaminy-dyplomowe
+                      - listitem [ref=e75]:
+                        - link "Jakość kształcenia" [ref=e76] [cursor=pointer]:
+                          - /url: /studenci/jakosc-ksztalcenia
+                      - listitem [ref=e77]:
+                        - link "Programy studiów zakończonych naborów" [ref=e78] [cursor=pointer]:
+                          - /url: /studenci/programy-studiow-zakonczonych-naborow
+                      - listitem [ref=e79]:
+                        - link "Samorząd Studentów" [ref=e80] [cursor=pointer]:
+                          - /url: /studenci/samorzad-studentow
+              - listitem [ref=e81]:
+                - link "Nauka" [ref=e82] [cursor=pointer]:
+                  - /url: /nauka
+                - list:
+                  - listitem [ref=e83]:
+                    - list [ref=e84]:
+                      - listitem [ref=e85]:
+                        - link "Popularyzacja nauki" [ref=e86] [cursor=pointer]:
+                          - /url: /nauka/popularyzacja-nauki
+                      - listitem [ref=e87]:
+                        - link "Rady dyscyplin naukowych" [ref=e88] [cursor=pointer]:
+                          - /url: /nauka/rady-dyscyplin-naukowych
+                      - listitem [ref=e89]:
+                        - link "Postępowania awansowe" [ref=e90] [cursor=pointer]:
+                          - /url: /nauka/postepowania-awansowe
+                      - listitem [ref=e91]:
+                        - link "Granty i konkursy" [ref=e92] [cursor=pointer]:
+                          - /url: /nauka/granty-i-konkursy
+                      - listitem [ref=e93]:
+                        - link "Publikacje naukowe" [ref=e94] [cursor=pointer]:
+                          - /url: /nauka/publikacje-naukowe
+                      - listitem [ref=e95]:
+                        - link "Konferencje i seminaria" [ref=e96] [cursor=pointer]:
+                          - /url: /nauka/konferencje-i-seminaria
+                      - listitem [ref=e97]:
+                        - link "Koła naukowe" [ref=e98] [cursor=pointer]:
+                          - /url: /studenci/kola-naukowe
+                      - listitem [ref=e99]:
+                        - link "Badania naukowe" [ref=e100] [cursor=pointer]:
+                          - /url: /nauka/badania-naukowe
+                      - listitem [ref=e101]:
+                        - link "Doktoranci- stypendia, obrony, nagrody" [ref=e102] [cursor=pointer]:
+                          - /url: /nauka/doktoranci-stypendia-obrony-nagrody
+              - listitem [ref=e103]:
+                - link "Pracownicy" [ref=e104] [cursor=pointer]:
+                  - /url: /pracownicy
+                - list:
+                  - listitem [ref=e105]:
+                    - list [ref=e106]:
+                      - listitem [ref=e107]:
+                        - link "Tutorzy" [ref=e108] [cursor=pointer]:
+                          - /url: /pracownicy/tutorzy
+                      - listitem [ref=e109]:
+                        - link "Skład osobowy" [ref=e110] [cursor=pointer]:
+                          - /url: /pracownicy/sklad-osobowy
+                      - listitem [ref=e111]:
+                        - link "Tutors" [ref=e112] [cursor=pointer]:
+                          - /url: /pracownicy/tutors
+                      - listitem [ref=e113]:
+                        - link "Oferty pracy" [ref=e114] [cursor=pointer]:
+                          - /url: /pracownicy/oferty-pracy
+                      - listitem [ref=e115]:
+                        - link "Oferty pracy w projektach" [ref=e116] [cursor=pointer]:
+                          - /url: /pracownicy/oferty-pracy-w-projektach
+                      - listitem [ref=e117]:
+                        - link "Portal Pracownika" [ref=e118] [cursor=pointer]:
+                          - /url: /pracownicy/portal-pracownika
+                      - listitem [ref=e119]:
+                        - link "Portal Edukacyjny" [ref=e120] [cursor=pointer]:
+                          - /url: /pracownicy/portal-edukacyjny
+                      - listitem [ref=e121]:
+                        - link "Komunikaty" [ref=e122] [cursor=pointer]:
+                          - /url: /pracownicy/komunikaty
+              - listitem [ref=e123]:
+                - link "Współpraca" [ref=e124] [cursor=pointer]:
+                  - /url: /wspolpraca
+                - list:
+                  - listitem [ref=e125]:
+                    - list [ref=e126]:
+                      - listitem [ref=e127]:
+                        - link "Współpraca z pracodawcami" [ref=e128] [cursor=pointer]:
+                          - /url: /wspolpraca/wspolpraca-z-pracodawcami
+                      - listitem [ref=e129]:
+                        - link "Absolwenci" [ref=e130] [cursor=pointer]:
+                          - /url: /wspolpraca/absolwenci
+                      - listitem [ref=e131]:
+                        - link "Akademia Przedsiębiorczości i Innowacyjności w Technologii" [ref=e132] [cursor=pointer]:
+                          - /url: /wspolpraca/akademia-przedsiebiorczosci-i-innowacyjnosci-w-technologii
+              - listitem [ref=e133]:
+                - link "News in English" [ref=e134] [cursor=pointer]:
+                  - /url: /news-english
+                - list:
+                  - listitem [ref=e135]:
+                    - list [ref=e136]:
+                      - listitem [ref=e137]:
+                        - link "Quantum Information Technology (QIT)" [ref=e138] [cursor=pointer]:
+                          - /url: /news-english/quantum-information-technology-qit
+              - listitem [ref=e139]:
+                - link "Wydział" [ref=e140] [cursor=pointer]:
+                  - /url: /wydzial
+                - list:
+                  - listitem [ref=e141]:
+                    - list [ref=e142]:
+                      - listitem [ref=e143]:
+                        - link "Władze" [ref=e144] [cursor=pointer]:
+                          - /url: /wydzial/wladze
+                      - listitem [ref=e145]:
+                        - link "Biuro Dziekana" [ref=e146] [cursor=pointer]:
+                          - /url: /wydzial/biuro-dziekana
+                      - listitem [ref=e147]:
+                        - link "Instytuty" [ref=e148] [cursor=pointer]:
+                          - /url: /wydzial/instytuty
+                      - listitem [ref=e149]:
+                        - link "Jednostki organizacyjne" [ref=e150] [cursor=pointer]:
+                          - /url: /wydzial/jednostki-organizacyjne
+                      - listitem [ref=e151]:
+                        - link "Dziekanat" [ref=e152] [cursor=pointer]:
+                          - /url: /wydzial/dziekanat
+                      - listitem [ref=e153]:
+                        - link "Rada Wydziału" [ref=e154] [cursor=pointer]:
+                          - /url: /wydzial/rada-wydzialu
+                      - listitem [ref=e155]:
+                        - link "Wydziałowe Komisje i Zespoły" [ref=e156] [cursor=pointer]:
+                          - /url: /wydzial/wydzialowe-komisje-i-zespoly
+                      - listitem [ref=e157]:
+                        - link "Zasłużeni dla Wydziału" [ref=e158] [cursor=pointer]:
+                          - /url: /wydzial/zasluzeni-dla-wydzialu
+                      - listitem [ref=e159]:
+                        - link "Doktorzy Honoris Causa" [ref=e160] [cursor=pointer]:
+                          - /url: /wydzial/doktorzy-honoris-causa
+                      - listitem [ref=e161]:
+                        - link "Rady Programowe Kierunków" [ref=e162] [cursor=pointer]:
+                          - /url: /wydzial/rady-programowe-kierunkow
+                      - listitem [ref=e163]:
+                        - link "Historia Wydziału" [ref=e164] [cursor=pointer]:
+                          - /url: /wydzial/historia-wydzialu
+                      - listitem [ref=e165]:
+                        - link "Kontakt" [ref=e166] [cursor=pointer]:
+                          - /url: /wydzial/kontakt
+                      - listitem [ref=e167]:
+                        - link "Aktualności" [ref=e168] [cursor=pointer]:
+                          - /url: /wydzial/aktualnosci
+              - listitem [ref=e169]:
+                - link "Rekrutacja" [ref=e170] [cursor=pointer]:
+                  - /url: /rekrutacja
+                - list:
+                  - listitem [ref=e171]:
+                    - list [ref=e172]:
+                      - listitem [ref=e173]:
+                        - link "Zasady rekrutacji" [ref=e174] [cursor=pointer]:
+                          - /url: /rekrutacja/zasady-rekrutacji
+                      - listitem [ref=e175]:
+                        - link "Terminy rekrutacji i adresy komisji" [ref=e176] [cursor=pointer]:
+                          - /url: /rekrutacja/terminy-rekrutacji-i-adresy-komisji
+                      - listitem [ref=e177]:
+                        - link "Studia I stopnia" [ref=e178] [cursor=pointer]:
+                          - /url: /rekrutacja/studia-i-stopnia
+                      - listitem [ref=e179]:
+                        - link "Studia II stopnia" [ref=e180] [cursor=pointer]:
+                          - /url: /rekrutacja/studia-ii-stopnia
+                      - listitem [ref=e181]:
+                        - link "Szkoła Doktorska Nauk Ścisłych i Przyrodniczych" [ref=e182] [cursor=pointer]:
+                          - /url: /rekrutacja/szkola-doktorska-nauk-scislych-i-przyrodniczych
+                      - listitem [ref=e183]:
+                        - link "Studia podyplomowe" [ref=e184] [cursor=pointer]:
+                          - /url: /rekrutacja/studia-podyplomowe
+              - listitem [ref=e185]:
+                - link "Szkoła Doktorska" [ref=e186] [cursor=pointer]:
+                  - /url: /szkola-doktorska
+                - list:
+                  - listitem [ref=e187]:
+                    - list [ref=e188]:
+                      - listitem [ref=e189]:
+                        - link "O szkole" [ref=e190] [cursor=pointer]:
+                          - /url: /szkola-doktorska/o-szkole
+                      - listitem [ref=e191]:
+                        - link "Aktualności" [ref=e192] [cursor=pointer]:
+                          - /url: /szkola-doktorska/aktualnosci
+                      - listitem [ref=e193]:
+                        - link "Formularze do pobrania" [ref=e194] [cursor=pointer]:
+                          - /url: /szkola-doktorska/formularze-do-pobrania
+                      - listitem [ref=e195]:
+                        - link "Doktoranci" [ref=e196] [cursor=pointer]:
+                          - /url: /szkola-doktorska/doktoranci
+                      - listitem [ref=e197]:
+                        - link "Rekrutacja" [ref=e198] [cursor=pointer]:
+                          - /url: /szkola-doktorska/rekrutacja
+                      - listitem [ref=e199]:
+                        - link "Kontakt" [ref=e200] [cursor=pointer]:
+                          - /url: /szkola-doktorska/kontakt
+              - listitem [ref=e201]:
+                - link "Rezerwacja sal" [ref=e202] [cursor=pointer]:
+                  - /url: /rezerwacja-sal
+              - listitem [ref=e203]:
+                - link "Plan Zajęć" [ref=e204] [cursor=pointer]:
+                  - /url: /plan-zajec
+              - listitem [ref=e205]:
+                - link "Zrównoważony rozwój" [ref=e206] [cursor=pointer]:
+                  - /url: /zrownowazony-rozwoj
+    - generic:
+      - complementary
+    - main [ref=e209]:
+      - generic [ref=e210]:
+        - navigation "breadcrumb" [ref=e213]:
+          - list [ref=e214]:
+            - listitem [ref=e215]:
+              - link "Strona główna" [ref=e216] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e217]:
+              - text: /
+              - link "Pracownicy" [ref=e218] [cursor=pointer]:
+                - /url: /pracownicy
+            - listitem [ref=e219]:
+              - text: /
+              - link "Skład osobowy" [ref=e220] [cursor=pointer]:
+                - /url: /pracownicy/sklad-osobowy
+        - heading "Strona nie znaleziona" [level=1] [ref=e223]
+        - generic [ref=e225]: Żądana strona nie została odnaleziona.
+    - contentinfo [ref=e226]:
+      - generic [ref=e229]:
+        - generic [ref=e232]:
+          - img "Uniwersytet Gdański - logo Wydziału Matematyki, Fizyki i Informatyki" [ref=e235]
+          - heading "Wydział Matematyki, Fizyki i Informatyki Uniwersytetu Gdańskiego" [level=4] [ref=e236]: Wydział Matematyki, Fizyki i Informatyki Uniwersytetu Gdańskiego
+          - paragraph [ref=e237]: ul. Wita Stwosza 57, 80-308 Gdańsk
+          - paragraph [ref=e238]:
+            - text: "tel.:"
+            - link "+ 48 58 523 20 27" [ref=e239] [cursor=pointer]:
+              - /url: tel:+48585232027
+          - paragraph [ref=e240]:
+            - link "biuromfi@ug.edu.pl" [ref=e241] [cursor=pointer]:
+              - /url: mailto:biuromfi@ug.edu.pl
+          - paragraph [ref=e242]:
+            - text: "Portiernia:"
+            - link "+ 48 58 523 21 02" [ref=e243] [cursor=pointer]:
+              - /url: tel:+48585232102
+          - paragraph [ref=e244]
+          - generic [ref=e246]:
+            - link "Facebook Wydziału Matematyki, Fizyki i Informatyki Facebook WMFI" [ref=e248] [cursor=pointer]:
+              - /url: https://pl-pl.facebook.com/mfiug/
+              - img "Facebook Wydziału Matematyki, Fizyki i Informatyki" [ref=e249]
+              - text: Facebook WMFI
+            - link "Facebook dziekanatu Wydziału Matematyki, Fizyki i Informatyki Facebook Dziekanatu WMFI" [ref=e251] [cursor=pointer]:
+              - /url: https://pl-pl.facebook.com/Dziekanat-Wydziału-Matematyki-Fizyki-i-Informatyki-UG-1199894110047445/
+              - img "Facebook dziekanatu Wydziału Matematyki, Fizyki i Informatyki" [ref=e252]
+              - text: Facebook Dziekanatu WMFI
+            - link "Linkedin" [ref=e254] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/wydzia%C5%82-matematyki-fizyki-i-informatyki-uniwersytet-gda%C5%84ski/
+              - img "Linkedin" [ref=e255]
+        - generic [ref=e258]:
+          - heading "Informacje o" [level=5] [ref=e259]: Informacje o
+          - list [ref=e260]:
+            - listitem [ref=e261]:
+              - link "Wydziały" [ref=e262] [cursor=pointer]:
+                - /url: https://ug.edu.pl/o_uczelni/wydzialy
+            - listitem [ref=e263]:
+              - link "Szkoły Doktorskie" [ref=e264] [cursor=pointer]:
+                - /url: https://sd.ug.edu.pl/
+            - listitem [ref=e265]:
+              - link "Międzynarodowe Centra Badawcze" [ref=e266] [cursor=pointer]:
+                - /url: https://ug.edu.pl/o-uczelni/miedzynarodowe-centra-badawcze
+            - listitem [ref=e267]:
+              - link "Biblioteka" [ref=e268] [cursor=pointer]:
+                - /url: https://bg.ug.edu.pl
+            - listitem [ref=e269]:
+              - link "Centrum Języków Obcych" [ref=e270] [cursor=pointer]:
+                - /url: https://cjo.ug.edu.pl/
+            - listitem [ref=e271]:
+              - link "Centrum Wychowania Fizycznego i Sportu" [ref=e272] [cursor=pointer]:
+                - /url: https://sport.ug.edu.pl/
+            - listitem [ref=e273]:
+              - link "Wydawnictwo" [ref=e274] [cursor=pointer]:
+                - /url: https://wydawnictwo.ug.edu.pl/
+            - listitem [ref=e275]:
+              - link "Samorząd Studentów" [ref=e276] [cursor=pointer]:
+                - /url: https://ug.edu.pl/zycie-studenckie/samorzad-studentow
+            - listitem [ref=e277]:
+              - link "Samorząd Doktorantów" [ref=e278] [cursor=pointer]:
+                - /url: https://ug.edu.pl/studenci/studia-trzeciego-stopnia/organizacje/samorzad-doktorantow-rada-doktorantow
+            - listitem [ref=e279]:
+              - link "Programy doskonałości naukowej" [ref=e280] [cursor=pointer]:
+                - /url: https://ug.edu.pl/nauka/inicjatywa-doskonalosci-uczelnia-badawcza
+            - listitem [ref=e281]:
+              - link "Realizowane projekty" [ref=e282] [cursor=pointer]:
+                - /url: https://ug.edu.pl/nauka/biuro-projektow-rozwojowych/realizowane-projekty-rozwojowe
+            - listitem [ref=e283]:
+              - link "Jednostki i organizacje" [ref=e284] [cursor=pointer]:
+                - /url: https://old.ug.edu.pl/o_uczelni/struktura_ug
+            - listitem [ref=e285]:
+              - link "Znajdź pracownika" [ref=e286] [cursor=pointer]:
+                - /url: https://ug.edu.pl/pracownicy/szukaj
+            - listitem [ref=e287]:
+              - link "Uczelnie Fahrenheita" [ref=e288] [cursor=pointer]:
+                - /url: https://faru.edu.pl/
+            - listitem [ref=e289]:
+              - link "Centrum Kompetencyjne EZD" [ref=e290] [cursor=pointer]:
+                - /url: https://ug.edu.pl/ck-ezd
+        - generic [ref=e293]:
+          - heading "Informacje dla" [level=5] [ref=e294]: Informacje dla
+          - list [ref=e295]:
+            - listitem [ref=e296]:
+              - link "Kandydaci" [ref=e297] [cursor=pointer]:
+                - /url: https://ug.edu.pl/kandydaci
+            - listitem [ref=e298]:
+              - link "Studenci" [ref=e299] [cursor=pointer]:
+                - /url: https://ug.edu.pl/studenci
+            - listitem [ref=e300]:
+              - link "Doktoranci" [ref=e301] [cursor=pointer]:
+                - /url: https://ug.edu.pl/studenci/studia-trzeciego-stopnia
+            - listitem [ref=e302]:
+              - link "Absolwenci" [ref=e303] [cursor=pointer]:
+                - /url: https://ug.edu.pl/absolwenci
+            - listitem [ref=e304]:
+              - link "Pracownicy" [ref=e305] [cursor=pointer]:
+                - /url: https://ug.edu.pl/pracownicy
+            - listitem [ref=e306]:
+              - link "Otoczenie społeczno-gospodarcze" [ref=e307] [cursor=pointer]:
+                - /url: https://ug.edu.pl/wspolpraca/otoczenie-spoleczno-gospodarcze
+            - listitem [ref=e308]:
+              - link "Media" [ref=e309] [cursor=pointer]:
+                - /url: https://ug.edu.pl/media
+          - paragraph [ref=e310]
+        - generic [ref=e313]:
+          - heading "Odnośniki" [level=5] [ref=e314]
+          - list [ref=e315]:
+            - listitem [ref=e316]:
+              - link "Kalendarz roku akademickiego" [ref=e317] [cursor=pointer]:
+                - /url: https://ug.edu.pl/pracownicy/strony_jednostek/biuro_ksztalcenia/organizacja_roku_akademickiego
+            - listitem [ref=e318]:
+              - link "Helpdesk" [ref=e319] [cursor=pointer]:
+                - /url: mailto:help@ug.edu.pl
+            - listitem [ref=e320]:
+              - link "Gazeta Uniwersytecka" [ref=e321] [cursor=pointer]:
+                - /url: https://gazeta.ug.edu.pl/
+            - listitem [ref=e322]:
+              - link "BIP" [ref=e323] [cursor=pointer]:
+                - /url: https://bip.ug.edu.pl/
+            - listitem [ref=e324]:
+              - link "Kampusy UG" [ref=e325] [cursor=pointer]:
+                - /url: https://ug.edu.pl/o_uczelni/mapa_ug/mapy_kampusow
+            - listitem [ref=e326]:
+              - link "Biuro Karier UG" [ref=e327] [cursor=pointer]:
+                - /url: https://biuro-karier.ug.edu.pl/
+            - listitem [ref=e328]:
+              - link "Oferty pracy" [ref=e329] [cursor=pointer]:
+                - /url: https://bip.ug.edu.pl/ogloszenia_i_komunikaty/praca_na_ug
+            - listitem [ref=e330]:
+              - link "Deklaracja dostępności" [ref=e331] [cursor=pointer]:
+                - /url: https://ug.edu.pl/strona/102745/deklaracja_dostepnosci_-_ugedupl
+```

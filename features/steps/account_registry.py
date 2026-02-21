@@ -53,11 +53,9 @@ def field_equals_to(context, pesel, field, value):
     assert response.status_code == 200
     assert response.json()[field] == value
 
-# --- KROKI DLA PRZELEWÓW ---
 
 @step('Account with pesel "{pesel}" has balance: "{amount}"')
 def set_account_balance(context, pesel, amount):
-    # Używamy PATCH do ręcznego ustawienia balansu na potrzeby testu
     json_body = {"balance": int(amount)}
     resp = requests.patch(URL + f"/api/accounts/{pesel}", json=json_body)
     assert resp.status_code == 200
@@ -79,4 +77,4 @@ def check_balance(context, pesel, amount):
     assert resp.json()["balance"] == int(amount)
 
 def clear(self):
-    self.accounts = [] # Czyścimy obecne konta przed załadowaniem
+    self.accounts = [] 
