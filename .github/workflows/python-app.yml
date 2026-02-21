@@ -31,7 +31,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        python3 -m coverage run --source=src,app -m pytest
+        export PYTHONPATH=$GITHUB_WORKSPACE
+        python3 -m coverage run --source=src,app -m pytest tests/unit
     - name: Raport
       run: |
         python3 -m coverage report --include="app/*" --fail-under=100
