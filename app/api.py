@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 from src.account_registry import AccountRegistry
 from src.personal_account import PersonalAccount
+from src.mongodb_repository import MongoAccountsRepository
+from src.personal_account import PersonalAccount
 
 app = Flask(__name__)
 registry = AccountRegistry()
@@ -101,3 +103,25 @@ def transfer_between_accounts():
             return jsonify({"message": "Przelew wykonany"}), 200
         return jsonify({"message": "Brak środków"}), 422
     return jsonify({"message": "Nie znaleziono kont"}), 404
+
+
+mongo_repo = MongoAccountsRepository()
+
+@app.route("/api/accounts/save", methods=['POST'])
+def save_to_db():
+    accounts = registry.get_all()
+    mongo_repo.save_all(accounts)
+    return jsonify({"message": "Konta zapisane w bazie danych"}), 200
+
+@app.route("/api/accounts/load", methods=['POST'])
+def load_from_db():
+    registry.clear() 
+    db_accounts = mongo_repo.load_all()
+    
+    for data in db_accounts:
+        acc = PersonalAccount(data["name"], data["surname"], data["pesel"])
+        acc.balance = data["balance"]
+        acc.history = data["history"]
+        registry.add_account(acc)
+        
+    return jsonify({"message": "Konta załadowane z bazy danych"}), 200

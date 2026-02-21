@@ -77,3 +77,6 @@ def check_balance(context, pesel, amount):
     resp = requests.get(URL + f"/api/accounts/{pesel}")
     assert resp.status_code == 200
     assert resp.json()["balance"] == int(amount)
+
+def clear(self):
+    self.accounts = [] # Czyścimy obecne konta przed załadowaniem
