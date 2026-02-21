@@ -20,5 +20,5 @@ jobs:
         export FLASK_APP=app/api.py
         export PYTHONPATH=$GITHUB_WORKSPACE
         flask run &
-        sleep 5
+        sleep 10
         python3 -m pytest tests/api
