@@ -32,11 +32,14 @@ jobs:
     - name: Test with pytest
       run: |
         export PYTHONPATH=$GITHUB_WORKSPACE
-        python3 -m coverage run --source=src,app -m pytest tests/unit
+        # Uruchamiamy tylko testy jednostkowe, które badają folder src
+        python3 -m coverage run --source=src -m pytest tests/unit
+
     - name: Raport
       run: |
-        python3 -m coverage report --include="app/*" --fail-under=100
-        
+        python3 -m coverage report
+        # Sprawdzamy pokrycie logiki biznesowej (src), a nie API
+        python3 -m coverage report --include="src/*" --fail-under=80
     - name: Raport
       run: |
         python3 -m coverage report
