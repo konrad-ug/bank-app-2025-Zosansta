@@ -1,0 +1,24 @@
+name: API Tests
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  api-testing:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Start flask and run tests
+      run: |
+        export FLASK_APP=app/api.py
+        export PYTHONPATH=$GITHUB_WORKSPACE
+        flask run &
+        sleep 5
+        python3 -m pytest tests/api
