@@ -137,3 +137,26 @@ class TestEmailHistory(unittest.TestCase):
             expected_text,
             self.email
         )
+
+    def test_outgoing_express_transfer_negative_amount(self):
+        account = PersonalAccount("Jan", "Kowalski", "12345678901")
+        result = account.outgoing_express_transfer(-100)
+        self.assertEqual(result, "Błąd, kwota nie może być ujemna")
+
+    def test_outgoing_express_transfer_insufficient_funds(self):
+        account = PersonalAccount("Jan", "Kowalski", "12345678901")
+        account.balance = 100
+        result = account.outgoing_express_transfer(200)
+        self.assertEqual(result, "Błąd, zbyt mało środków na koncie")
+
+    def test_incoming_transfer_negative_value(self):
+        account = PersonalAccount("Jan", "Kowalski", "12345678901")
+        account.balance = 100
+        account.incoming_transfer(-50)
+        self.assertEqual(account.balance, 100) 
+
+    def test_outgoing_transfer_invalid_value(self):
+        account = PersonalAccount("Jan", "Kowalski", "12345678901")
+        account.balance = 100
+        account.outgoing_transfer(150)
+        self.assertEqual(account.balance, 100)
