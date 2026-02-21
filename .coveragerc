@@ -1,7 +1,4 @@
 [run]
-source = app, src
-omit = 
-    *company_account.py
-
-[report]
-show_missing = True
+omit =
+    src/company_account.py
+    smtp/smtp.py

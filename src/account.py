@@ -21,6 +21,9 @@
             
 #         return "Błąd, zbyt mało środków na koncie"
 
+from datetime import date
+from smtp.smtp import SMTPClient
+
 class Account:
     express_outgoing_transfer_fee = 0
 
@@ -32,7 +35,7 @@ class Account:
     def outgoing_transfer(self, value):
         if 0 < value <= self.balance:
             self.balance -= value
-            self.historia.append(-value) # [cite: 47]
+            self.historia.append(-value)
 
     def outgoing_express_transfer(self, value):
         if value <= 0:
@@ -47,3 +50,13 @@ class Account:
             return True
             
         return "Błąd, zbyt mało środków na koncie"
+    
+    def send_history_via_email(self, email_address):
+        dzis = date.today().strftime("%Y-%m-%d")
+        
+        subject = f"Account Transfer History {dzis}"
+        
+        prefix = "Personal" if hasattr(self, 'pesel') else "Company"
+        text = f"{prefix} account history: {self.historia}"        
+
+        return SMTPClient.send(subject, text, email_address)
