@@ -4,29 +4,22 @@ from src.mongodb_repository import MongoAccountsRepository
 
 class TestMongoAccountsRepository(unittest.TestCase):
     def setUp(self):
-        # Udajemy połączenie z bazą
         self.repository = MongoAccountsRepository()
         self.repository.collection = MagicMock()
 
     def test_save_all_clears_db_and_inserts_data(self):
-        # Tworzymy "udawane" konto
         mock_acc = MagicMock()
         mock_acc.to_dict.return_value = {"name": "Jan", "pesel": "111"}
         
-        # Wywołujemy zapis
         self.repository.save_all([mock_acc])
         
-        # Sprawdzamy czy wyczyszczono kolekcję (wymóg z PDF)
         self.repository.collection.delete_many.assert_called_once_with({})
-        # Sprawdzamy czy wstawiono dane
         self.repository.collection.insert_one.assert_called()
 
     def test_load_all_calls_find(self):
-        # Symulujemy, że find() coś zwraca
         self.repository.collection.find.return_value = [{"name": "Jan"}]
         result = self.repository.load_all()
         
-        # Sprawdzamy, czy find został wywołany
         self.repository.collection.find.assert_called_once()
         self.assertEqual(result, [{"name": "Jan"}])
 
@@ -35,6 +28,5 @@ class TestMongoAccountsRepository(unittest.TestCase):
         konto = PersonalAccount("Jan", "Kowalski", "11111111111")
         dane = konto.to_dict()
         
-        # Sprawdzamy czy słownik ma to co powinien
         self.assertEqual(dane["name"], "Jan")
         self.assertEqual(dane["pesel"], "11111111111")

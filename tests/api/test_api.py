@@ -20,7 +20,6 @@ class TestApi(unittest.TestCase):
         registry.get_all().clear()
 
 
-    # ---------- CREATE ----------
 
     def test_create_account_success(self):
         response = self.client.post("/api/accounts", json={
@@ -42,7 +41,6 @@ class TestApi(unittest.TestCase):
         self.assertEqual(response.status_code, 409)
 
 
-    # ---------- GET ----------
 
     def test_get_all_accounts(self):
         response = self.client.get("/api/accounts")
@@ -66,7 +64,6 @@ class TestApi(unittest.TestCase):
         self.assertEqual(response.json["count"], 1)
 
 
-    # ---------- UPDATE ----------
 
     def test_update_account(self):
         response = self.client.patch(
@@ -86,7 +83,6 @@ class TestApi(unittest.TestCase):
         self.assertEqual(response.status_code, 404)
 
 
-    # ---------- DELETE ----------
 
     def test_delete_account(self):
         response = self.client.delete(f"/api/accounts/{self.pesel}")
@@ -98,7 +94,6 @@ class TestApi(unittest.TestCase):
         self.assertEqual(response.status_code, 404)
 
 
-    # ---------- TRANSFERS ----------
 
     def test_incoming_transfer(self):
         response = self.client.post(
